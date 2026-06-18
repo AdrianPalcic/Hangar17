@@ -1,1 +1,17 @@
-node_modules
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+
+# env files
+.env.local
+.env*.local
+
+# typescript build info
+tsconfig.tsbuildinfo
+
+# misc
+.DS_Store
+*.pem
