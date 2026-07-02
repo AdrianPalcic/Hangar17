@@ -46,21 +46,25 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="hero">
+        <div className="hero-bg-wrap">
+          <Image
+            src="/pexels-matreding-9784198.jpg"
+            alt=""
+            fill
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            priority
+          />
+        </div>
+        <div className="hero-overlay" />
         <div className="hero-inner">
           <div className="hero-logo-wrap">
             <HeroWordmark />
           </div>
-          <p className="hero-sub">All your car needs</p>
-
-          <div className="hero-services-grid">
-            {[
-              'Premium Detailing',   'Najam vozila',
-              'Dubinsko čišćenje',   'Prodaja vozila',
-              'Poliranje vozila',    'Uslužna prodaja',
-              'Zaštita vozila',      'Fotografiranje vozila',
-            ].map((service) => (
-              <div key={service} className="hero-service-item">{service}</div>
-            ))}
+          <div className="hero-divider" />
+          <p className="hero-sub">Sve što vam treba za vaš automobil</p>
+          <div className="hero-ctas">
+            <a href="/rabljena-vozila" className="hero-cta">Pogledaj vozila</a>
+            <a href="/kontakt" className="hero-cta-outline">Kontaktiraj nas</a>
           </div>
         </div>
       </section>

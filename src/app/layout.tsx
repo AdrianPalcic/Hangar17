@@ -1,23 +1,17 @@
 import type { Metadata } from 'next'
-import localFont from 'next/font/local'
-import { Inter } from 'next/font/google'
+import { Inter, Space_Grotesk, Outfit } from 'next/font/google'
 import './globals.css'
 
-const manufaktur = localFont({
-  src: [
-    { path: './fonts/manufaktur-light.ttf',  weight: '300', style: 'normal' },
-    { path: './fonts/manufaktur-medium.ttf', weight: '500', style: 'normal' },
-    { path: './fonts/manufaktur-bold.ttf',   weight: '700', style: 'normal' },
-  ],
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['300', '500', '600', '700'],
   variable: '--font-manufaktur',
   display: 'swap',
 })
 
-const microgramma = localFont({
-  src: [
-    { path: './fonts/microgramma-ext-d-medium.otf',    weight: '500', style: 'normal' },
-    { path: './fonts/microgramma-d-extended-bold.otf', weight: '700', style: 'normal' },
-  ],
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['500', '700'],
   variable: '--font-microgramma',
   display: 'swap',
 })
@@ -38,7 +32,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="hr">
-      <body className={`${manufaktur.variable} ${microgramma.variable} ${inter.variable}`} suppressHydrationWarning>{children}</body>
+      <body className={`${outfit.variable} ${spaceGrotesk.variable} ${inter.variable}`} suppressHydrationWarning>{children}</body>
     </html>
   )
 }

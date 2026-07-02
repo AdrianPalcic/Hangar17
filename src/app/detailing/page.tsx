@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -96,32 +97,14 @@ export default function DetailingPage() {
           </p>
           <a href="#usluge" className="hero-cta">Pogledaj usluge</a>
         </div>
-        <div className="najam-hero-right">
-          <div className="hero-right-label">Zašto profesionalni detailing?</div>
-          <div className="pillars">
-            {[
-              {
-                n: '01', title: 'Vrijednost vozila',
-                body: 'Uredno i zaštićeno vozilo vrijedi značajno više pri prodaji. Detailing je investicija koja se vraća.',
-              },
-              {
-                n: '02', title: 'Dugotrajna zaštita',
-                body: 'Keramički premazi i zaštitne folije čuvaju lak godinama od UV, kiše, insekata i ogrebotina.',
-              },
-              {
-                n: '03', title: 'Profesionalna oprema',
-                body: 'Koristimo isključivo certificirane profesionalne proizvode i strojeve, ne amaterske preparate.',
-              },
-            ].map(({ n, title, body }) => (
-              <div key={n} className="pillar">
-                <div className="pillar-num">{n}</div>
-                <div>
-                  <div className="pillar-title">{title}</div>
-                  <div className="pillar-body">{body}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="najam-hero-right" style={{ position: 'relative', overflow: 'hidden' }}>
+          <Image
+            src="/detailing.jpg"
+            alt="Auto detailing"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
+          />
         </div>
       </section>
 

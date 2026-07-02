@@ -1,3 +1,4 @@
 import { vehicleType } from './vehicle'
+import { carMakeType } from './carMake'
 
-export const schemaTypes = [vehicleType]
+export const schemaTypes = [carMakeType, vehicleType]

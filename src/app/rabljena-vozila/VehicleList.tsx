@@ -8,7 +8,6 @@ import { Vehicle } from '@/lib/vehicles'
 export default function VehicleList({ vehicles }: { vehicles: Vehicle[] }) {
   const [filterBrand,  setFilterBrand]  = useState('')
   const [filterFuel,   setFilterFuel]   = useState('')
-  const [filterPrice,  setFilterPrice]  = useState('')
   const [filterSort,   setFilterSort]   = useState('')
   const [activeStatus, setActiveStatus] = useState('all')
   const [modalCar,     setModalCar]     = useState<string | null>(null)
@@ -18,11 +17,9 @@ export default function VehicleList({ vehicles }: { vehicles: Vehicle[] }) {
   const brands = [...new Set(vehicles.map((v) => v.brand))].sort()
 
   const filtered = useMemo(() => {
-    const maxP = filterPrice ? parseInt(filterPrice) : Infinity
     let list = vehicles.filter((v) => {
-      if (filterBrand  && v.brand !== filterBrand)   return false
-      if (filterFuel   && v.fuel  !== filterFuel)    return false
-      if (v.price > maxP)                            return false
+      if (filterBrand && v.brand !== filterBrand) return false
+      if (filterFuel  && v.fuel  !== filterFuel)  return false
       if (activeStatus !== 'all' && v.status !== activeStatus) return false
       return true
     })
@@ -31,7 +28,7 @@ export default function VehicleList({ vehicles }: { vehicles: Vehicle[] }) {
     if (filterSort === 'year-desc')  list = [...list].sort((a, b) => b.year  - a.year)
     if (filterSort === 'km-asc')     list = [...list].sort((a, b) => a.km    - b.km)
     return list
-  }, [vehicles, filterBrand, filterFuel, filterPrice, filterSort, activeStatus])
+  }, [vehicles, filterBrand, filterFuel, filterSort, activeStatus])
 
   const hasDostupno = filtered.some((v) => v.status === 'dostupno')
   const hasProdano  = filtered.some((v) => v.status === 'prodano')
@@ -59,14 +56,6 @@ export default function VehicleList({ vehicles }: { vehicles: Vehicle[] }) {
             <option value="Benzin">Benzin</option>
             <option value="Diesel">Diesel</option>
             <option value="Električni">Električni</option>
-          </select>
-
-          <select className="filter-select" value={filterPrice} onChange={(e) => setFilterPrice(e.target.value)}>
-            <option value="">Sva cijena</option>
-            <option value="20000">Do 20.000 €</option>
-            <option value="30000">Do 30.000 €</option>
-            <option value="40000">Do 40.000 €</option>
-            <option value="50000">Do 50.000 €</option>
           </select>
 
           <select className="filter-select" value={filterSort} onChange={(e) => setFilterSort(e.target.value)}>

@@ -4,7 +4,7 @@ export const ALL_VEHICLES_QUERY = groq`
   *[_type == "vehicle"] | order(_createdAt desc) {
     _id,
     "slug": slug.current,
-    brand,
+    "brand": brand->name,
     model,
     title,
     variant,
@@ -38,7 +38,7 @@ export const VEHICLE_BY_SLUG_QUERY = groq`
   *[_type == "vehicle" && slug.current == $slug][0] {
     _id,
     "slug": slug.current,
-    brand,
+    "brand": brand->name,
     model,
     title,
     variant,

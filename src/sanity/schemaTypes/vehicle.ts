@@ -26,10 +26,8 @@ export const vehicleType = defineType({
     }),
     defineField({
       name: 'brand', title: 'Marka',
-      type: 'string', group: 'osnovno',
-      options: {
-        list: ['BMW','Audi','Mercedes','Porsche','VW','MINI','Škoda','Toyota','Ford','Opel','Renault','Peugeot','Volvo','Lexus','Drugo'],
-      },
+      type: 'reference', group: 'osnovno',
+      to: [{ type: 'carMake' }],
       validation: (r) => r.required(),
     }),
     defineField({
@@ -135,7 +133,7 @@ export const vehicleType = defineType({
       type: 'number', group: 'tehnicko',
     }),
     defineField({
-      name: 'vatIncluded', title: 'PDV uključen',
+      name: 'vatIncluded', title: 'Vozilo u sustavu PDV',
       type: 'boolean', group: 'tehnicko',
       initialValue: false,
     }),
