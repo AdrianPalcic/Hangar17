@@ -116,24 +116,23 @@ export default function HomePage() {
           <p className="sec-subtitle">Provjereni automobili · Transparentne cijene</p>
           <div className="sec-divider" />
           <div className="cars-gallery">
-            {ALL_VEHICLES.slice(0, 5).map((car) => (
+            {ALL_VEHICLES.slice(0, 4).map((car) => (
               <Link key={car.id} href={`/rabljena-vozila/${car.slug}`} className="car-item">
                 {car.images[0]?.url
-                  ? <Image src={car.images[0].url} alt={car.images[0].alt} width={400} height={200} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
+                  ? <Image src={car.images[0].url} alt={car.images[0].alt} width={600} height={400} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   : (
-                    <div style={{ width: '100%', height: 200, background: '#111', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '100%', height: '100%', background: '#111', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <svg width="48" height="24" viewBox="0 0 64 32" fill="none" stroke="rgba(255,255,255,.2)" strokeWidth="1.5" strokeLinecap="round">
                         <path d="M4 22h56M6 22l8-12h28l8 12" /><circle cx="16" cy="25" r="3" /><circle cx="48" cy="25" r="3" />
                       </svg>
                     </div>
                   )
                 }
-                <div className="car-item-info">
-                  <div className="car-item-name">{car.title}</div>
-                  <div className="car-item-sub">{car.year} · {car.km.toLocaleString('hr-HR')} km · {car.priceDisplay}</div>
-                </div>
               </Link>
             ))}
+          </div>
+          <div className="cars-gallery-cta">
+            <a href="/rabljena-vozila" className="cta-btn">Pogledaj svu ponudu →</a>
           </div>
         </div>
       </section>
@@ -170,13 +169,11 @@ export default function HomePage() {
         <div className="foto-inner">
           <div>
             <p className="foto-eyebrow">Usluga</p>
-            <h2 className="foto-title">Fotografiranje<br />vozila</h2>
+            <h2 className="foto-title">Uslužna<br />prodaja</h2>
           </div>
           <div className="foto-right">
             <p className="foto-desc">
-              Profesionalne fotografije vašeg vozila koje privlače pažnju i
-              ubrzavaju prodaju. Studio i outdoor snimanja, retuš i obrada
-              uključeni — kao dio uslužne prodaje.
+              Tekst dolazi
             </p>
             <a href="/usluzna-prodaja" className="svc-link">Saznaj više →</a>
           </div>

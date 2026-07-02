@@ -132,74 +132,20 @@ export default function UsluznaPage() {
       </section>
 
       {/* FOTOGRAFIJA */}
-      <section className="dt-services">
-        <div className="dt-services-inner">
-          <div style={{ marginBottom: '48px' }}>
-            <div className="section-label">Uključeno u uslugu</div>
-            <h2 className="section-h2">Profesionalna<br />fotografija vozila</h2>
-            <p style={{ maxWidth: 560, color: 'var(--mid)', lineHeight: 1.7, marginTop: 16 }}>
-              Svako vozilo u uslužnoj prodaji fotografiramo profesionalno.
-              Ovisno o vozilu i vašim željama, biramo odgovarajući paket.
-            </p>
+      <section className="foto-section">
+        <div className="foto-inner">
+          <div>
+            <p className="foto-eyebrow">Usluga</p>
+            <h2 className="foto-title">Fotografiranje<br />vozila</h2>
           </div>
-          {[
-            {
-              n: '01',
-              title: 'Oglasni paket',
-              short: 'Brzo i učinkovito za prodaju',
-              desc: 'Optimalan paket za prodaju — sve što treba za profesionalan oglas. Izvana, iznutra i ključni detalji. Isporuka unutar 24 sata.',
-              includes: [
-                'Eksterijer — 10 kutova s čistom pozadinom',
-                'Interijer — vozačevo mjesto, zadnja sjedala, prtljažnik',
-                'Ključni detalji — instrumentna ploča, felge, motor',
-                'Osnovna korekcija boje i kontrasta',
-                'Isporuka optimiziranih JPG-ova za portale',
-              ],
-            },
-            {
-              n: '02',
-              title: 'Premium paket',
-              short: 'Za premium ponudu i marketing',
-              desc: 'Sveobuhvatno snimanje za vozila višeg cjenovnog razreda. Kombinacija studijskog i outdoor snimanja, profesionalni retuš.',
-              includes: [
-                'Studijsko snimanje s profesionalnom rasvjetom',
-                'Outdoor lokacijsko snimanje',
-                'Eksterijer — 20+ kutova, sve strane i detalji',
-                'Kompletan interijer — sve površine i detalji',
-                'Profesionalni retuš svake fotografije',
-                'Isporuka JPG i RAW datoteka',
-              ],
-            },
-            {
-              n: '03',
-              title: 'Marketinški paket',
-              short: 'Showroom, web i društvene mreže',
-              desc: 'Kompletna vizualna priča vozila — za autokuće i vlasnike posebnih vozila koji trebaju vrhunski vizualni materijal za sve kanale.',
-              includes: [
-                'Sve iz Premium paketa',
-                'Lifestyle fotografija s vozačem ili modelom',
-                'Fotografija na više lokacija',
-                'Kratki video walkthrough (30–60 sek)',
-                'Materijali za Instagram, Facebook i web banner',
-              ],
-            },
-          ].map(({ n, title, short, desc, includes }) => (
-            <div key={n} className="dt-service-row">
-              <div className="dt-service-left">
-                <span className="dt-service-num">{n}</span>
-                <h2 className="dt-service-title">{title}</h2>
-                <p className="dt-service-short">{short}</p>
-              </div>
-              <div className="dt-service-right">
-                <p className="dt-service-desc">{desc}</p>
-                <ul className="dt-includes-list">
-                  {includes.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+          <div className="foto-right">
+            <p className="foto-desc">
+              Profesionalne fotografije vašeg vozila koje privlače pažnju i
+              ubrzavaju prodaju. Studio i outdoor snimanja, retuš i obrada
+              uključeni — kao dio uslužne prodaje.
+            </p>
+            <a href="/usluzna-prodaja" className="svc-link">Saznaj više →</a>
+          </div>
         </div>
       </section>
 
