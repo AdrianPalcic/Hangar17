@@ -129,13 +129,13 @@ export default function UsluznaPage() {
                 ],
               },
               {
-                name: 'All-in paket', tag: 'Potpuna usluga', price: '720€',
+                name: 'All-in paket', tag: 'Potpuna usluga', price: '750€',
                 items: [
                   'Sve iz Prodajnog paketa',
                   'Postavljanje oglasa u trajanju od 6 mjeseci',
                   'Čuvanje vozila za vrijeme prodaje',
                   'Prijenos vlasništva',
-                  'Prioritetno oglašavanje na portalima i društvenim mrežama',
+                  'Postavljanje prioritetnih oglasa na portalima i društvenim mrežama',
                   'Vi ne morate biti prisutni ni u jednom koraku',
                 ],
               },
@@ -160,7 +160,6 @@ export default function UsluznaPage() {
             <h2 className="cta-h2">Dogovorite<br />termin</h2>
             <p className="cta-sub">
               Javite nam se za besplatnu procjenu i dogovor.
-              Cijeli proces objašnjavamo bez obaveze — vi odlučujete.
             </p>
           </div>
           <div className="cta-contact-card">

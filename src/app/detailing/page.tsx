@@ -46,7 +46,11 @@ const packages = [
   {
     id: 'poliranje',
     name: 'Poliranje vozila',
-    desc: 'Jednoslojno poliranje vozila za vraćanje prvotnog sjaja. Uključuje premium detailing i pranje motornog prostora.',
+    tag: 'Jednoslojno poliranje vozila za vraćanje prvotnog sjaja',
+    items: [
+      'Premium detailing',
+      'Pranje motornog prostora',
+    ],
     priceSmall: '260,00€',
     priceLarge: '320,00€',
   },
@@ -128,11 +132,10 @@ export default function DetailingPage() {
         <div className="cjenik-inner">
           <h2 className="section-h2">Cjenik<br />usluga</h2>
           <div className="cjenik-grid">
-            {packages.map(({ id, name, tag, desc, items, note, price, priceUnit, priceSmall, priceLarge, featured }) => (
+            {packages.map(({ id, name, tag, items, note, price, priceUnit, priceSmall, priceLarge, featured }) => (
               <div key={id} className={`cjenik-card${featured ? ' featured' : ''}`}>
                 <div className="cjenik-name">{name}</div>
                 {tag && <div className="cjenik-tag">{tag}</div>}
-                {desc && <p className="cjenik-desc">{desc}</p>}
                 {items && (
                   <ul className="cjenik-list">
                     {items.map((it) => <li key={it}>{it}</li>)}
