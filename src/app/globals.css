@@ -240,7 +240,7 @@ img { display: block; max-width: 100%; }
   font-size: 14px; font-weight: 300; line-height: 1.7;
   color: rgba(255,255,255,.5); max-width: 340px;
 }
-.detailing-cta { margin-top: 48px; }
+.detailing-cta { display: flex; justify-content: center; margin-top: 48px; }
 
 /* ─── FOTOGRAFIRANJE SECTION ─────────────────────────────── */
 .foto-section { background: var(--offwhite); padding: 96px 40px; }
@@ -451,6 +451,33 @@ textarea { resize: vertical; min-height: 140px; }
 .period-desc { font-size: 12px; font-weight: 300; color: var(--sub); line-height: 1.6; }
 .period-card.featured .period-desc { color: rgba(255,255,255,.6); }
 .period-badge { display: inline-block; margin-bottom: 16px; padding: 3px 10px; background: var(--red); color: var(--white); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ─── PACKAGES (uslužna prodaja) ─────────────────────────── */
+.packages-section { max-width: 1200px; margin: 0 auto; padding: 96px 40px; }
+.packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.package-card {
+  background: var(--white); border: 1.5px solid var(--border);
+  padding: 40px 32px; display: flex; flex-direction: column;
+  transition: border-color .2s, transform .2s;
+}
+.package-card:hover { transform: translateY(-4px); }
+.package-card.featured { background: var(--dark); border-color: var(--dark); }
+.package-name { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); margin-bottom: 6px; }
+.package-card.featured .package-name { color: var(--white); }
+.package-tag {
+  font-size: 12px; font-weight: 500; color: var(--sub);
+  margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--border);
+}
+.package-card.featured .package-tag { color: rgba(255,255,255,.5); border-bottom-color: rgba(255,255,255,.12); }
+.package-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; flex: 1; }
+.package-list li { font-size: 13px; font-weight: 300; color: var(--text); line-height: 1.5; padding-left: 22px; position: relative; }
+.package-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--red); font-weight: 700; }
+.package-card.featured .package-list li { color: rgba(255,255,255,.75); }
+.package-price {
+  font-size: 28px; font-weight: 800; letter-spacing: -0.03em; color: var(--text);
+  padding-top: 20px; border-top: 1px solid var(--border);
+}
+.package-card.featured .package-price { color: var(--white); border-top-color: rgba(255,255,255,.12); }
 .cta-section { background: var(--black); padding: 96px 40px; }
 .cta-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 480px; gap: 80px; align-items: center; }
 .cta-h2  { font-size: clamp(40px, 5vw, 64px); font-weight: 600; letter-spacing: -0.05em; line-height: 0.9; color: var(--white); margin-bottom: 16px; }
@@ -763,51 +790,69 @@ textarea { resize: vertical; min-height: 140px; }
   .vd-page { padding: 32px 0 64px; }
 }
 
-/* ─── DETAILING PAGE — SERVICES ─────────────────────────── */
-.dt-services { background: var(--white); }
-.dt-services-inner { max-width: 1200px; margin: 0 auto; }
-.dt-service-row {
-  display: grid; grid-template-columns: 1fr 1.6fr;
-  gap: 80px; align-items: start;
-  padding: 72px 40px;
-  border-bottom: 1px solid var(--border);
+/* ─── DETAILING PAGE — CJENIK ────────────────────────────── */
+.cjenik-section { max-width: 1200px; margin: 0 auto; padding: 96px 40px; }
+.cjenik-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; }
+.cjenik-card {
+  background: var(--white); border: 1.5px solid var(--border);
+  padding: 36px 28px; display: flex; flex-direction: column;
+  transition: border-color .2s, transform .2s;
 }
-.dt-service-row:last-child { border-bottom: none; }
-.dt-service-num {
-  display: block;
-  font-family: var(--font-microgramma);
-  font-size: 10px; font-weight: 500;
-  letter-spacing: 0.2em; color: var(--red);
-  margin-bottom: 16px;
-}
-.dt-service-title {
+.cjenik-card:hover { transform: translateY(-4px); }
+.cjenik-card.featured { background: var(--dark); border-color: var(--dark); }
+.cjenik-name {
   font-family: var(--font-manufaktur);
-  font-size: clamp(32px, 4vw, 56px); font-weight: 500;
-  letter-spacing: -0.03em; line-height: 1;
-  color: var(--black); margin-bottom: 12px;
+  font-size: 26px; font-weight: 500; letter-spacing: -0.02em;
+  line-height: 1.05; color: var(--black); margin-bottom: 10px;
 }
-.dt-service-short {
-  font-size: 13px; font-weight: 500;
-  letter-spacing: 0.02em; color: var(--sub);
-  text-transform: uppercase;
+.cjenik-card.featured .cjenik-name { color: var(--white); }
+.cjenik-tag {
+  font-size: 12px; font-weight: 500; color: var(--sub); line-height: 1.5;
+  margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
 }
-.dt-service-desc {
-  font-size: 15px; font-weight: 300; line-height: 1.8;
-  color: var(--text); margin-bottom: 28px;
+.cjenik-card.featured .cjenik-tag { color: rgba(255,255,255,.5); border-bottom-color: rgba(255,255,255,.12); }
+.cjenik-desc {
+  font-size: 13px; font-weight: 300; color: var(--text); line-height: 1.7;
+  margin-bottom: 24px; flex: 1;
 }
-.dt-includes-list {
-  list-style: none; padding: 0; margin: 0;
-  display: flex; flex-direction: column; gap: 10px;
+.cjenik-card.featured .cjenik-desc { color: rgba(255,255,255,.75); }
+.cjenik-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; flex: 1; }
+.cjenik-list li {
+  font-size: 13px; font-weight: 300; color: var(--text); line-height: 1.5;
+  padding-left: 20px; position: relative;
 }
-.dt-includes-list li {
-  font-size: 14px; font-weight: 400; color: var(--text);
-  padding-left: 20px; position: relative; line-height: 1.5;
+.cjenik-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--red); font-weight: 700; }
+.cjenik-card.featured .cjenik-list li { color: rgba(255,255,255,.75); }
+.cjenik-note {
+  font-size: 11px; font-weight: 300; font-style: italic; color: var(--sub);
+  line-height: 1.5; margin-bottom: 20px;
 }
-.dt-includes-list li::before {
-  content: '—';
-  position: absolute; left: 0;
-  color: var(--red); font-weight: 600;
+.cjenik-card.featured .cjenik-note { color: rgba(255,255,255,.4); }
+.cjenik-price-block { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border); }
+.cjenik-card.featured .cjenik-price-block { border-top-color: rgba(255,255,255,.12); }
+.cjenik-price-split { display: flex; flex-direction: column; gap: 10px; }
+.cjenik-price-item { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.cjenik-price-label { font-size: 11px; font-weight: 500; letter-spacing: 0.04em; color: var(--sub); }
+.cjenik-card.featured .cjenik-price-label { color: rgba(255,255,255,.5); }
+.cjenik-price { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; color: var(--text); white-space: nowrap; }
+.cjenik-card.featured .cjenik-price { color: var(--white); }
+.cjenik-price-single { display: flex; align-items: baseline; gap: 8px; }
+.cjenik-price-single .cjenik-price { font-size: 28px; }
+.cjenik-price-unit { font-size: 12px; font-weight: 400; color: var(--sub); }
+.cjenik-card.featured .cjenik-price-unit { color: rgba(255,255,255,.5); }
+
+/* ─── DETAILING PAGE — DODATNE USLUGE ────────────────────── */
+.addons-section { background: var(--offwhite); padding: 96px 40px; }
+.addons-inner { max-width: 1200px; margin: 0 auto; }
+.addons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 56px; }
+.addons-col-title {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--sub); margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border);
 }
+.addon-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--border); }
+.addon-row:last-child { border-bottom: none; }
+.addon-label { font-size: 14px; font-weight: 400; color: var(--text); }
+.addon-price { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; }
 
 /* ─── MODAL ──────────────────────────────────────────────── */
 .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 999; align-items: center; justify-content: center; padding: 24px; }
@@ -860,7 +905,6 @@ footer { background: var(--black); padding: 60px 40px 32px; }
   .services-split--3 { grid-template-columns: 1fr; }
   .svc-panel { padding: 60px 32px; min-height: auto; }
   .detailing-section { padding: 64px 24px; }
-  .dt-service-row { grid-template-columns: 1fr; gap: 32px; padding: 48px 24px; }
   .detailing-grid { grid-template-columns: 1fr; }
   .detailing-card { border-right: none !important; }
   .detailing-card:nth-child(3) { border-bottom: 1px solid rgba(255,255,255,.08) !important; }
@@ -885,6 +929,9 @@ footer { background: var(--black); padding: 60px 40px 32px; }
   .cta-inner { grid-template-columns: 1fr; gap: 48px; }
   .how-grid,
   .how-grid--4 { grid-template-columns: 1fr; }
+  .packages-grid { grid-template-columns: 1fr; }
+  .cjenik-grid { grid-template-columns: 1fr 1fr; }
+  .addons-grid { grid-template-columns: 1fr; gap: 40px; }
 
   .filter-inner { padding: 12px 24px; gap: 8px; grid-template-columns: 1fr 1fr; }
   .filter-divider { display: none; }
@@ -907,10 +954,12 @@ footer { background: var(--black); padding: 60px 40px 32px; }
   footer { padding: 48px 24px 28px; }
   .cta-section { padding: 64px 24px; }
   .cta-form-row { grid-template-columns: 1fr; }
-  .how-section, .periods-section { padding: 64px 24px; }
+  .how-section, .periods-section, .packages-section { padding: 64px 24px; }
   .included-section { padding: 64px 24px; }
   .included-grid { grid-template-columns: 1fr; }
   .modal-form-row { grid-template-columns: 1fr; }
+  .cjenik-section, .addons-section { padding: 64px 24px; }
+  .cjenik-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {

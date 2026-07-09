@@ -134,8 +134,8 @@ export default function VehicleDetail({ vehicle: v }: { vehicle: Vehicle }) {
     { label: 'Godište',           value: v.year.toString() },
     { label: 'Prva registracija', value: v.firstReg },
     { label: 'Kilometraža',       value: `${v.km.toLocaleString('hr-HR')} km` },
-    { label: 'Gorivo',            value: v.fuel },
-    { label: 'Motor',             value: v.displacement },
+    { label: 'Motor',             value: v.fuel },
+    { label: 'Zapremnina',        value: v.displacement },
     { label: 'Snaga',             value: v.power },
     { label: 'Mjenjač',           value: v.transmission },
     { label: 'Pogon',             value: v.drive },
@@ -143,7 +143,7 @@ export default function VehicleDetail({ vehicle: v }: { vehicle: Vehicle }) {
     { label: 'Tip karoserije',    value: v.bodyType },
     { label: 'Broj vrata',        value: v.doors.toString() },
     { label: 'Broj sjedala',      value: v.seats.toString() },
-    { label: 'Vozilo u sustavu PDV', value: v.vatIncluded ? 'Da' : 'Ne' },
+    { label: 'Vozilo u sustavu PDV-a', value: v.vatIncluded ? 'Da' : 'Ne' },
     ...(v.warranty ? [{ label: 'Jamstvo', value: v.warranty }] : []),
   ]
 
@@ -229,7 +229,7 @@ export default function VehicleDetail({ vehicle: v }: { vehicle: Vehicle }) {
 
               <div className="vd-price-block">
                 <div className="vd-price">{v.priceDisplay}</div>
-                {v.vatIncluded && <div className="vd-price-note">Vozilo u sustavu PDV</div>}
+                {v.vatIncluded && <div className="vd-price-note">Vozilo u sustavu PDV-a</div>}
               </div>
 
               <div className="vd-key-specs">

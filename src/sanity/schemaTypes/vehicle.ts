@@ -84,7 +84,7 @@ export const vehicleType = defineType({
       validation: (r) => r.required().min(0),
     }),
     defineField({
-      name: 'fuel', title: 'Gorivo',
+      name: 'fuel', title: 'Motor',
       type: 'string', group: 'tehnicko',
       options: {
         list: ['Benzin', 'Diesel', 'Električni', 'Hibrid (Plug-in)', 'Hibrid (Blagi)', 'LPG', 'Vodik'],
@@ -102,7 +102,7 @@ export const vehicleType = defineType({
       description: 'Npr. "140 kW / 190 KS"',
     }),
     defineField({
-      name: 'displacement', title: 'Zapremina / baterija',
+      name: 'displacement', title: 'Zapremnina',
       type: 'string', group: 'tehnicko',
       description: 'Npr. "1.995 ccm" ili "77 kWh"',
     }),
@@ -133,7 +133,7 @@ export const vehicleType = defineType({
       type: 'number', group: 'tehnicko',
     }),
     defineField({
-      name: 'vatIncluded', title: 'Vozilo u sustavu PDV',
+      name: 'vatIncluded', title: 'Vozilo u sustavu PDV-a',
       type: 'boolean', group: 'tehnicko',
       initialValue: false,
     }),

@@ -100,9 +100,8 @@ export default async function RabljenVozilaPage() {
         <div className="page-hero-inner">
           <h1>Prodaja<br />vozila</h1>
           <p>
-            Pažljivo odabrana vozila različitih marki i modela.
-            Svaki automobil prolazi detaljnu tehničku kontrolu.
-            Kliknite na vozilo za kompletne specifikacije i galeriju.
+            Pažljivo odabrana vozila. Svaki automobil prolazi detaljnu kontrolu.
+            Kliknite na vozilo za više informacija.
           </p>
         </div>
       </section>
@@ -110,7 +109,6 @@ export default async function RabljenVozilaPage() {
       <VehicleList vehicles={vehicles} />
 
       <div className="divider-banner">
-        <p>Ne pronalaziš što tražiš?</p>
         <h2>Uvozimo po narudžbi iz cijele EU</h2>
       </div>
 
@@ -119,18 +117,17 @@ export default async function RabljenVozilaPage() {
           <div className="narudzba-header">
             <h2 className="narudzba-title">Vozila po<br />narudžbi</h2>
             <p className="narudzba-intro">
-              Kao stručnjaci za uvoz vozila unutar Europske unije, naš tim
-              omogućuje vam pristup širokom asortimanu vozila iz svih zemalja
-              unutar EU, uz potpunu podršku u svakoj fazi procesa.
+              Kao stručnjaci za uvoz vozila, naš tim omogućuje vam pristup
+              širokom asortimanu automobila iz svih zemalja EU.
             </p>
           </div>
 
           <div className="benefits-grid">
             {[
-              { n: '01 — Izbor',    title: 'Širok izbor i pristup ekskluzivnim modelima',  items: ['Pronalazimo vozila koja nisu dostupna na domaćem tržištu', 'Pretražujemo tržišta u Njemačkoj, Nizozemskoj, Italiji i drugim zemljama'] },
+              { n: '01 — Izbor',    title: 'Široka ponuda vozila iz zemalja EU',            items: ['Pronalazimo vozilo prema vašim željama i potrebama', 'Pretražujemo tržište unutar europske unije'] },
               { n: '02 — Ušteda',   title: 'Ušteda vremena i novca',                        items: ['Pronalazimo vozilo prema vašim željama po najnižoj cijeni', 'Bez skrivenih troškova — unaprijed izračunavamo sve (PPMV, transport)'] },
               { n: '03 — Provjera', title: 'Stručna provjera i kvaliteta',                  items: ['Temeljita provjera tehničkog stanja, servisne povijesti i dokumentacije', 'Fotodokumentacija i video provjera prije kupnje'] },
-              { n: '04 — Proces',   title: 'Kompletan proces „od A do Ž"',                  items: ['Pronalazak, pregled i testiranje vozila', 'Siguran transport s osiguranjem', 'Carinska obrada, homologacija i registracija u RH'] },
+              { n: '04 — Proces',   title: 'Kompletan proces kupovine automobila',          items: ['Pronalazak, pregled i testiranje vozila', 'Siguran transport s osiguranjem', 'Carinska obrada, homologacija i registracija u RH'] },
             ].map(({ n, title, items }) => (
               <div key={n} className="benefit-item">
                 <div className="benefit-num">{n}</div>

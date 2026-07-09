@@ -52,7 +52,7 @@ export default function VehicleList({ vehicles }: { vehicles: Vehicle[] }) {
           </select>
 
           <select className="filter-select" value={filterFuel} onChange={(e) => setFilterFuel(e.target.value)}>
-            <option value="">Sva goriva</option>
+            <option value="">Svi motori</option>
             <option value="Benzin">Benzin</option>
             <option value="Diesel">Diesel</option>
             <option value="Električni">Električni</option>
@@ -75,7 +75,7 @@ export default function VehicleList({ vehicles }: { vehicles: Vehicle[] }) {
                 className={`chip${v === 'all' ? ' red-chip' : ''}${activeStatus === v ? ' active' : ''}`}
                 onClick={() => setActiveStatus(v)}
               >
-                {v === 'all' ? 'Sve' : v === 'dostupno' ? 'Samo dostupno' : 'Prodano'}
+                {v === 'all' ? 'Sve' : v === 'dostupno' ? 'Dostupno' : 'Prodano'}
               </button>
             ))}
           </div>

@@ -63,6 +63,7 @@ export default function KontaktPage() {
                     <option value="prodaja">Prodaja vozila</option>
                     <option value="narudzba">Uvoz po narudžbi</option>
                     <option value="najam">Najam vozila</option>
+                    <option value="detailing">Detailing</option>
                     <option value="ostalo">Ostalo</option>
                   </select>
                 </div>
@@ -101,7 +102,7 @@ export default function KontaktPage() {
           <div className="info-block">
             <div className="info-label">E-mail</div>
             <div className="info-value">
-              <a href="mailto:info@rikverc.hr">info@rikverc.hr</a>
+              <a href="mailto:info@hangar17.hr">info@hangar17.hr</a>
             </div>
           </div>
 
@@ -116,11 +117,11 @@ export default function KontaktPage() {
               </div>
               <div className="hours-row">
                 <span className="hours-day">Subota</span>
-                <span className="hours-time">09:00 – 14:00</span>
+                <span className="hours-time">Po dogovoru</span>
               </div>
               <div className="hours-row">
-                <span className="hours-day">Nedjelja</span>
-                <span className="hours-closed">Zatvoreno</span>
+                <span className="hours-day">Nedjelja i praznici</span>
+                <span className="hours-closed">Ne radimo</span>
               </div>
             </div>
           </div>
@@ -143,19 +144,19 @@ export default function KontaktPage() {
           <Link href="/rabljena-vozila" className="quick-card">
             <div className="quick-card-label">Ponuda</div>
             <div className="quick-card-title">Rabljena vozila</div>
-            <div className="quick-card-body">Pregledajte naša trenutno dostupna i prodana vozila s kompletnim specifikacijama i fotografijama.</div>
+            <div className="quick-card-body">Pregledajte trenutnu ponudu naših vozila.</div>
             <span className="quick-card-link">Pogledaj ponudu →</span>
           </Link>
           <Link href="/rabljena-vozila#narudzba" className="quick-card">
             <div className="quick-card-label">Uvoz</div>
             <div className="quick-card-title">Vozila po narudžbi</div>
-            <div className="quick-card-body">Ne vidite što tražite? Uvozimo vozila iz cijele EU prema vašim željama i specifikacijama.</div>
+            <div className="quick-card-body">Uvozimo vozila iz cijele EU prema vašim željama i specifikacijama.</div>
             <span className="quick-card-link">Saznaj više →</span>
           </Link>
           <Link href="/najam" className="quick-card">
             <div className="quick-card-label">Najam</div>
             <div className="quick-card-title">Dugoročni najam</div>
-            <div className="quick-card-body">Fiksna mjesečna rata s uključenim svim troškovima osim goriva. Periodi od 15 dana do 60 mjeseci.</div>
+            <div className="quick-card-body">Fiksna mjesečna rata s uključenim svim troškovima osim goriva. Periodi od 30 dana do 60 mjeseci.</div>
             <span className="quick-card-link">Saznaj više →</span>
           </Link>
         </div>

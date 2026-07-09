@@ -22,8 +22,8 @@ export default function NajamPage() {
           <div className="hero-eyebrow">Najam vozila</div>
           <h1 className="hero-h1">Dugoročni<br />najam</h1>
           <p className="hero-lead">
-            Zamijenite troškove kupnje predvidivom mjesečnom ratom.
-            Vozilo koje vam odgovara, bez početnih ulaganja i bez skrivenih troškova.
+            Zamijenite troškove kupnje vozila predviđenom mjesečnom ratom.
+            Vozilo po vašim potrebama, bez početnog ulaganja i skrivenih troškova.
           </p>
           <a href="#kontakt-forma" className="hero-cta">Zatražite ponudu</a>
         </div>
@@ -37,7 +37,7 @@ export default function NajamPage() {
               },
               {
                 n: '02', title: 'Brzo',
-                body: 'Brzo sklapanje ugovora i isporuka vozila. Bez dugih čekanja i birokracije.',
+                body: 'Brzo sklapanje ugovora i isporuka vozila. Bez dugih čekanja i administracije.',
               },
               {
                 n: '03', title: 'Bez dodatnih troškova',
@@ -65,34 +65,6 @@ export default function NajamPage() {
         </div>
       </div>
 
-      {/* HOW IT WORKS */}
-      <section className="how-section">
-        <div className="section-label">Kako funkcionira</div>
-        <h2 className="section-h2">Tri koraka<br />do vozila</h2>
-        <div className="how-grid">
-          {[
-            {
-              n: '01', title: 'Definirajte potrebe',
-              body: 'Recite nam kakvo vozilo trebate — vrstu, veličinu, period najma. Savjetujemo vas koje vozilo je optimalno za vaš slučaj.',
-            },
-            {
-              n: '02', title: 'Dogovaramo uvjete',
-              body: 'Izradimo personalnu ponudu s fiksnom mjesečnom ratom. Ugovor sklapamo brzo, bez nepotrebnih čekanja.',
-            },
-            {
-              n: '03', title: 'Vozilo je vaše',
-              body: 'Vozilo preuzimate odmah po potpisu ugovora. Na kraju perioda možete produžiti, zamijeniti ili otkupiti vozilo.',
-            },
-          ].map(({ n, title, body }) => (
-            <div key={n} className="how-item">
-              <div className="how-n">{n}</div>
-              <div className="how-title">{title}</div>
-              <div className="how-body">{body}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* WHAT'S INCLUDED */}
       <section className="included-section">
         <div className="included-inner">
@@ -105,12 +77,12 @@ export default function NajamPage() {
           </div>
           <div className="included-grid">
             {[
-              { title: 'Osiguranje od odgovornosti', body: 'Potpuno pokriće od autocasco i obaveznog osiguranja prema trećim osobama.' },
-              { title: 'Kasko osiguranje',           body: 'Zaštita vozila od oštećenja, krađe i nepredviđenih situacija.' },
-              { title: 'Redovni servis',             body: 'Svi servisni intervali, ulje, filteri i potrošni materijal prema preporuci proizvođača.' },
-              { title: 'Tehnički pregled',           body: 'Troškovi tehničkog pregleda i sve propisane provjere vozila.' },
-              { title: 'Gume i zamjena',             body: 'Sezonska zamjena guma i troškovi seta zimskih i ljetnih guma.' },
-              { title: 'Opcija otkupa',              body: 'Po isteku ugovora možete otkupiti vozilo po unaprijed ugovorenoj vrijednosti.' },
+              { title: 'Osiguranje od odgovornosti', body: 'Potpuno pokriće prema trećim osobama.' },
+              { title: 'Kasko osiguranje',           body: 'Zaštita od oštećenja, krađe i ostalih nepredviđenih situacija.' },
+              { title: 'Redovno održavanje',         body: 'Svi redovni servisi po uputama proizvođača.' },
+              { title: 'Registracija vozila',        body: 'Trošak tehničkog pregleda i registracije vozila.' },
+              { title: 'Gume i zamjena',             body: 'Sezonska zamjena guma.' },
+              { title: 'Opcija otkupa vozila',       body: 'Mogućnost otkupa vozila po završetku najma.' },
             ].map(({ title, body }) => (
               <div key={title} className="included-item">
                 <div className="inc-check">✓</div>
@@ -128,25 +100,25 @@ export default function NajamPage() {
           <h2 className="periods-h2">Periodi najma</h2>
           <div className="periods-row">
             <div className="period-card">
-              <div className="period-duration">15–30</div>
+              <div className="period-duration">30–60</div>
               <div className="period-unit">Dana</div>
-              <div className="period-desc">Kratkoročni najam za privremene potrebe ili testiranje vozila.</div>
+              <div className="period-desc">Kratkoročni period za privremene potrebe.</div>
             </div>
             <div className="period-card">
-              <div className="period-duration">1–12</div>
+              <div className="period-duration">2–6</div>
               <div className="period-unit">Mjeseci</div>
-              <div className="period-desc">Fleksibilni srednji period — idealan za projekte i sezonske potrebe.</div>
+              <div className="period-desc">Srednjoročni period za projekte i sezonske potrebe.</div>
             </div>
             <div className="period-card featured">
               <div className="period-badge">Najpopularnije</div>
-              <div className="period-duration">12–36</div>
+              <div className="period-duration">6–36</div>
               <div className="period-unit">Mjeseci</div>
               <div className="period-desc">Optimalan omjer cijene i fleksibilnosti za privatne i poslovne korisnike.</div>
             </div>
             <div className="period-card">
               <div className="period-duration">36–60</div>
               <div className="period-unit">Mjeseci</div>
-              <div className="period-desc">Dugoročni najam s najnižom mogućom ratom i svim uslugama uključenim.</div>
+              <div className="period-desc">Dugoročni najam s najnižom mogućom ratom.</div>
             </div>
           </div>
         </div>
@@ -163,17 +135,17 @@ export default function NajamPage() {
             </p>
           </div>
           <div className="cta-contact-card">
-            <a className="cta-contact-item" href="tel:+38512345678">
+            <a className="cta-contact-item" href="tel:+385916309076">
               <span className="cta-contact-label">Telefon</span>
-              <strong>+385 12 345 678</strong>
+              <strong>+385 91 6309 076</strong>
             </a>
-            <a className="cta-contact-item" href="mailto:info@rikverc.hr">
+            <a className="cta-contact-item" href="mailto:info@hangar17.hr">
               <span className="cta-contact-label">E-mail</span>
-              <strong>info@rikverc.hr</strong>
+              <strong>info@hangar17.hr</strong>
             </a>
-            <a className="cta-contact-item" href="https://maps.google.com/?q=Hangar+17" target="_blank" rel="noreferrer">
-              <span className="cta-contact-label">Lokacija</span>
-              <strong>Zagreb, Hrvatska</strong>
+            <a className="cta-contact-item" href="/kontakt">
+              <span className="cta-contact-label">Kontakt obrazac</span>
+              <strong>Pošaljite upit →</strong>
             </a>
           </div>
         </div>

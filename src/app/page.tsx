@@ -61,9 +61,9 @@ export default function HomePage() {
             <HeroWordmark />
           </div>
           <div className="hero-divider" />
-          <p className="hero-sub">Sve što vam treba za vaš automobil</p>
+          <p className="hero-sub">DETALJI KOJI ČINE RAZLIKU. VOZILA KOJA VRIJEDE.</p>
           <div className="hero-ctas">
-            <a href="/rabljena-vozila" className="hero-cta">Pogledaj vozila</a>
+            <a href="/rabljena-vozila" className="hero-cta">Ponuda vozila</a>
             <a href="/kontakt" className="hero-cta-outline">Kontaktiraj nas</a>
           </div>
         </div>
@@ -81,7 +81,6 @@ export default function HomePage() {
       {/* VOZILA — Prodaja + Uslužna prodaja + Najam */}
       <div className="services-split services-split--3">
         <div className="svc-panel svc-panel--dark">
-          <p className="svc-eyebrow">Vozila</p>
           <h2 className="svc-title">Prodaja<br />vozila</h2>
           <p className="svc-desc">
             Provjereni rabljeni automobili i uvoz vozila po narudžbi iz cijele EU.
@@ -90,20 +89,18 @@ export default function HomePage() {
           <a href="/rabljena-vozila" className="svc-link">Pogledaj ponudu →</a>
         </div>
         <div className="svc-panel svc-panel--black">
-          <p className="svc-eyebrow">Vozila</p>
           <h2 className="svc-title">Uslužna<br />prodaja</h2>
           <p className="svc-desc">
-            Prodajemo vaše vozilo umjesto vas — oglašavamo, pokazujemo
-            kupcima i brinemo o svem papirnatom poslu.
+            Prodajemo vaš automobil umjesto vas. Od fotografiranja i oglašavanja
+            do pregovaranja i administracije.
           </p>
           <a href="/usluzna-prodaja" className="svc-link">Kako funkcionira →</a>
         </div>
         <div className="svc-panel svc-panel--light">
-          <p className="svc-eyebrow">Vozila</p>
           <h2 className="svc-title">Najam<br />vozila</h2>
           <p className="svc-desc">
-            Dugoročni najam s fiksnom mjesečnom ratom — bez skrivenih troškova,
-            bez brige o servisiranju i osiguranju.
+            Dugoročni najam automobila s fiksnom mjesečnom ratom, bez brige o
+            troškovima.
           </p>
           <a href="/najam" className="svc-link svc-link--dark">Saznaj više →</a>
         </div>
@@ -113,7 +110,7 @@ export default function HomePage() {
       <section className="used-cars">
         <div className="used-cars-inner">
           <h2 className="sec-heading-xl">Aktualna ponuda</h2>
-          <p className="sec-subtitle">Provjereni automobili · Transparentne cijene</p>
+          <p className="sec-subtitle">Provjereni automobili. Brza realizacija.</p>
           <div className="sec-divider" />
           <div className="cars-gallery">
             {ALL_VEHICLES.slice(0, 4).map((car) => (
@@ -132,7 +129,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="cars-gallery-cta">
-            <a href="/rabljena-vozila" className="cta-btn">Pogledaj svu ponudu →</a>
+            <a href="/rabljena-vozila" className="cta-btn">Ponuda svih vozila</a>
           </div>
         </div>
       </section>
@@ -141,15 +138,14 @@ export default function HomePage() {
       <section className="detailing-section">
         <div className="detailing-inner">
           <div className="detailing-header">
-            <p className="section-label">Usluge</p>
             <h2 className="sec-heading-xl detailing-title">Detailing</h2>
           </div>
           <div className="detailing-grid">
             {[
-              { n: '01', title: 'Premium Detailing', desc: 'Kompletan tretman vozila — interijer i eksterijer na najvišoj razini.', href: '/detailing#premium-detailing' },
-              { n: '02', title: 'Dubinsko čišćenje', desc: 'Temeljito čišćenje svih površina, tepiha, presvlaka i klima sustava.',  href: '/detailing#dubinsko-ciscenje' },
-              { n: '03', title: 'Poliranje vozila',   desc: 'Uklanjanje ogrebotina i matiranja laka, vraćanje originalnog sjaja.',    href: '/detailing#poliranje' },
-              { n: '04', title: 'Zaštita vozila',     desc: 'Keramički premaz i zaštitne folije koje štite lak godinama.',            href: '/detailing#zastita' },
+              { n: '01', title: 'Premium Detailing', desc: 'Kompletan tretman vašeg vozila.', href: '/detailing#premium-detailing' },
+              { n: '02', title: 'Dubinsko čišćenje', desc: 'Temeljito kemijsko čišćenje svih površina, tepiha i presvlaka.',  href: '/detailing#dubinsko-ciscenje' },
+              { n: '03', title: 'Poliranje vozila',   desc: 'Uklanjanje površinskih ogrebotina i vraćanje originalnog sjaja.',    href: '/detailing#poliranje' },
+              { n: '04', title: 'Priprema vozila za prodaju', desc: 'Priprema automobila detaljnim čišćenjem i osvježavanjem interijera i eksterijera.', href: '/detailing#zastita' },
             ].map(({ n, title, desc, href }) => (
               <Link key={n} href={href} className="detailing-card">
                 <span className="detailing-card-num">{n}</span>
@@ -159,23 +155,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="detailing-cta">
-            <a href="/detailing" className="cta-btn">Više o detailingu →</a>
-          </div>
-        </div>
-      </section>
-
-      {/* FOTOGRAFIRANJE */}
-      <section className="foto-section">
-        <div className="foto-inner">
-          <div>
-            <p className="foto-eyebrow">Usluga</p>
-            <h2 className="foto-title">Uslužna<br />prodaja</h2>
-          </div>
-          <div className="foto-right">
-            <p className="foto-desc">
-              Tekst dolazi
-            </p>
-            <a href="/usluzna-prodaja" className="svc-link">Saznaj više →</a>
+            <a href="/detailing" className="cta-btn">Više informacija</a>
           </div>
         </div>
       </section>
@@ -209,10 +189,10 @@ export default function HomePage() {
       <section className="financing">
         <div className="financing-inner">
           <p className="financing-text">
-            Imate pitanje ili trebate ponudu?<br />
-            <strong>Kontaktirajte nas — odgovaramo isti dan.</strong>
+            Za ostala pitanja i ponude<br />
+            <strong>Kontaktirajte nas, odgovaramo isti dan.</strong>
           </p>
-          <a href="/kontakt" className="cta-btn">Kontaktirajte nas</a>
+          <a href="/kontakt" className="cta-btn">KONTAKT</a>
         </div>
       </section>
 

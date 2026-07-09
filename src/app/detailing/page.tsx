@@ -12,71 +12,78 @@ export const metadata: Metadata = {
 }
 
 const tickerItems = [
-  'Keramički premaz', 'Paint correction', 'Dubinsko čišćenje',
-  'Zaštita folijom', 'Poliranje laka', 'Interior detail',
-  'Scratch removal', 'Engine bay', 'Headlight restoration',
+  'Dubinsko čišćenje', 'Detaljno čišćenje eksterijera', 'Poliranje laka',
+  'Pranje motornog prostora', 'Detaljno čišćenje interijera',
 ]
 
-const services = [
+const packages = [
   {
     id: 'premium-detailing',
-    n: '01',
-    title: 'Premium Detailing',
-    short: 'Kompletan tretman iznutra i izvana',
-    desc: 'Najsveobuhvatniji paket koji pokriva svaki centimetar vašeg vozila — od detaljnog pranja i dekontaminacije eksterijera do dubokog čišćenja interijera, poliranja i zaštite. Rezultat je vozilo koje izgleda kao novo.',
-    includes: [
-      'Ručno pranje i dekontaminacija laka',
-      'Strojno poliranje — uklanjanje ogrebotina i swirlova',
-      'Čišćenje i zaštita plastike i guma',
-      'Dubinsko čišćenje interijera usisivanjem i parom',
-      'Čišćenje i kondicioniranje kože ili tkanine',
-      'Čišćenje stakala iznutra i izvana',
-      'Zaštita laka po izboru (wax, sealant ili keramika)',
+    name: 'Premium Detailing',
+    tag: 'Kompletan tretman iznutra i izvana',
+    items: [
+      'Detaljno pranje izvana',
+      'Detaljno pranje felgi',
+      'Pranje svih pragova, štokova i prtljažnog prostora',
+      'Detaljno pranje unutrašnjosti',
+      'Pranje stakala',
+      'Kemijsko čišćenje tepiha',
     ],
+    priceSmall: '55,00€',
+    priceLarge: '65,00€',
   },
   {
-    id: 'dubinsko-ciscenje',
-    n: '02',
-    title: 'Dubinsko čišćenje',
-    short: 'Temeljito čišćenje svake površine',
-    desc: 'Fokusirano na uklanjanje dubokih nečistoća, mirisa i bakterija iz interijera i eksterijera. Koristimo profesionalnu opremu za ekstrakciju i parno čišćenje koje dopire tamo gdje standardno čišćenje ne može.',
-    includes: [
-      'Ekstrakcija tepiha i presvlaka vrelom vodom',
-      'Parno čišćenje svih plastičnih površina',
-      'Ozonska dezinfekcija (uklanjanje mirisa i bakterija)',
-      'Čišćenje ventilacijskih otvora i klima sustava',
-      'Čišćenje prtljažnog prostora',
-      'Čišćenje motora — engine bay detail',
+    id: 'kemijsko-ciscenje',
+    name: 'Kemijsko čišćenje',
+    tag: 'Premium detailing + kemijsko čišćenje unutrašnjosti',
+    items: [
+      'Premium detailing',
+      'Kemijsko čišćenje unutrašnjosti',
     ],
+    priceSmall: '180,00€',
+    priceLarge: '200,00€',
   },
   {
     id: 'poliranje',
-    n: '03',
-    title: 'Poliranje vozila',
-    short: 'Vraćanje originalnog sjaja laka',
-    desc: 'Strojno poliranje kojim uklanjamo ogrebotine, matiranja, swirl markove i oksidaciju laka. Nakon tretmana lak je gladak i reflektivan kao na prvom danu.',
-    includes: [
-      'Procjena stanja laka — debljinomjer',
-      'Jednofazno ili višefazno poliranje po potrebi',
-      'Uklanjanje laganih do srednje dubokih ogrebotina',
-      'Korekcija boje (paint correction)',
-      'Poliranje plastičnih farova (headlight restoration)',
-      'Aplikacija zaštite laka po završetku',
+    name: 'Poliranje vozila',
+    desc: 'Jednoslojno poliranje vozila za vraćanje prvotnog sjaja. Uključuje premium detailing i pranje motornog prostora.',
+    priceSmall: '260,00€',
+    priceLarge: '320,00€',
+  },
+  {
+    id: 'vip-care-club',
+    name: 'VIP Care Club',
+    tag: 'Paket održavanja — premium detailing na mjesečnoj bazi',
+    items: [
+      '3 dolaska mjesečno',
+      'Povlašteni termini',
+      'Nadopuna tekućine za pranje vjetrobranskog stakla',
+      'Za svakih 6 uzastopnih mjeseci voucher u iznosu 50,00€',
+    ],
+    note: '*Voucher vrijedi za neku od naših usluga koje ne obuhvaća VIP Care Club paket.',
+    price: '145,00€',
+    priceUnit: '/ mjesečno',
+    featured: true,
+  },
+]
+
+const addonGroups = [
+  {
+    title: 'Pranje po elementima',
+    items: [
+      { label: 'Uklanjanje psećih dlaka', price: '45 €' },
+      { label: 'Čišćenje kože sva sjedala', price: '90 €' },
+      { label: 'Čišćenje motornog prostora', price: '40 €' },
     ],
   },
   {
-    id: 'zastita',
-    n: '04',
-    title: 'Zaštita vozila',
-    short: 'Dugotrajna zaštita laka i karoserije',
-    desc: 'Preventivna zaštita koja čuva vaše vozilo od UV zraka, kiselih kiša, insekata, ogrebotina i nečistoća. Nudimo višerazinsku zaštitu ovisno o potrebama i budžetu.',
-    includes: [
-      'Keramički premaz (coating) — zaštita 2–5 godina',
-      'Paint protection film (PPF) — folija na kritičnim zonama',
-      'Zaštitni wax ili polymer sealant',
-      'Zaštita stakala hidrofobnim premazom',
-      'Zaštita felgi keramičkim premazom',
-      'Zaštita interijera — kože, tkanine i plastike',
+    title: 'Kemijsko čišćenje po elementima',
+    items: [
+      { label: 'Prednja sjedala', price: '50 €' },
+      { label: 'Stražnja klupa', price: '60 €' },
+      { label: 'Tepisi komplet', price: '20 €' },
+      { label: 'Prtljažnik', price: '20 €' },
+      { label: 'Dječja sjedalica', price: '30 €' },
     ],
   },
 ]
@@ -89,13 +96,12 @@ export default function DetailingPage() {
       {/* HERO SPLIT */}
       <section className="hero-split">
         <div className="hero-left">
-          <div className="hero-eyebrow">Detailing</div>
           <h1 className="hero-h1">Premium<br />Detailing</h1>
           <p className="hero-lead">
-            Profesionalni tretman vozila koji prolazi svaki detalj —
-            iznutra i izvana. Od poliranja laka do keramičkog premaza.
+            Profesionalni tretman vozila. Detaljno čišćenje interijera i
+            eksterijera te održavanje vozila.
           </p>
-          <a href="#usluge" className="hero-cta">Pogledaj usluge</a>
+          <a href="#cjenik" className="hero-cta">Pogledaj cjenik</a>
         </div>
         <div className="najam-hero-right" style={{ position: 'relative', overflow: 'hidden' }}>
           <Image
@@ -117,52 +123,61 @@ export default function DetailingPage() {
         </div>
       </div>
 
-      {/* USLUGE */}
-      <section className="dt-services" id="usluge">
-        <div className="dt-services-inner">
-          {services.map(({ id, n, title, short, desc, includes }) => (
-            <div key={id} className="dt-service-row" id={id}>
-              <div className="dt-service-left">
-                <span className="dt-service-num">{n}</span>
-                <h2 className="dt-service-title">{title}</h2>
-                <p className="dt-service-short">{short}</p>
+      {/* CJENIK */}
+      <section className="cjenik-section" id="cjenik">
+        <div className="cjenik-inner">
+          <h2 className="section-h2">Cjenik<br />usluga</h2>
+          <div className="cjenik-grid">
+            {packages.map(({ id, name, tag, desc, items, note, price, priceUnit, priceSmall, priceLarge, featured }) => (
+              <div key={id} className={`cjenik-card${featured ? ' featured' : ''}`}>
+                <div className="cjenik-name">{name}</div>
+                {tag && <div className="cjenik-tag">{tag}</div>}
+                {desc && <p className="cjenik-desc">{desc}</p>}
+                {items && (
+                  <ul className="cjenik-list">
+                    {items.map((it) => <li key={it}>{it}</li>)}
+                  </ul>
+                )}
+                {note && <p className="cjenik-note">{note}</p>}
+                <div className="cjenik-price-block">
+                  {price ? (
+                    <div className="cjenik-price-single">
+                      <span className="cjenik-price">{price}</span>
+                      <span className="cjenik-price-unit">{priceUnit}</span>
+                    </div>
+                  ) : (
+                    <div className="cjenik-price-split">
+                      <div className="cjenik-price-item">
+                        <span className="cjenik-price-label">Mali automobil</span>
+                        <span className="cjenik-price">{priceSmall}</span>
+                      </div>
+                      <div className="cjenik-price-item">
+                        <span className="cjenik-price-label">Veliki automobil</span>
+                        <span className="cjenik-price">{priceLarge}</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="dt-service-right">
-                <p className="dt-service-desc">{desc}</p>
-                <ul className="dt-includes-list">
-                  {includes.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section className="included-section">
-        <div className="included-inner">
-          <div className="included-header">
-            <h2 className="included-h2">Kako<br />funkcionira</h2>
-            <p className="included-lead">
-              Svaki detailing tretman prolazi kroz isti pažljivo definiran proces
-              koji garantira vrhunski rezultat bez kompromisa.
-            </p>
-          </div>
-          <div className="included-grid">
-            {[
-              { title: 'Konzultacija',     body: 'Pregledamo vozilo, procijenimo stanje laka i interijera te predložimo optimalni paket.' },
-              { title: 'Priprema',         body: 'Detaljna inspekcija, zaštita osjetljivih dijelova i priprema radnog prostora.' },
-              { title: 'Tretman',          body: 'Korak-po-korak izvođenje svih ugovorenih usluga profesionalnom opremom.' },
-              { title: 'Završna kontrola', body: 'Pregled svake površine pod profesionalnim osvjetljenjem i korekcija eventualnih nedostataka.' },
-              { title: 'Dokumentacija',    body: 'Fotodokumentacija prije i poslije tretmana — vidite razliku crno na bijelo.' },
-              { title: 'Preuzimanje',      body: 'Preuzimate vozilo osobno. Savjetujemo vas o održavanju kako bi efekt trajao što dulje.' },
-            ].map(({ title, body }) => (
-              <div key={title} className="included-item">
-                <div className="inc-check">✓</div>
-                <div className="inc-title">{title}</div>
-                <div className="inc-body">{body}</div>
+      {/* DODATNE USLUGE */}
+      <section className="addons-section">
+        <div className="addons-inner">
+          <h2 className="section-h2">Dodatne<br />usluge</h2>
+          <div className="addons-grid">
+            {addonGroups.map(({ title, items }) => (
+              <div key={title} className="addons-col">
+                <div className="addons-col-title">{title}</div>
+                {items.map(({ label, price }) => (
+                  <div key={label} className="addon-row">
+                    <span className="addon-label">{label}</span>
+                    <span className="addon-price">{price}</span>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
@@ -175,8 +190,7 @@ export default function DetailingPage() {
           <div>
             <h2 className="cta-h2">Zatražite<br />ponudu</h2>
             <p className="cta-sub">
-              Javite nam se s fotografijama vozila ili dovedite
-              auto na besplatnu procjenu — predložit ćemo najprikladniji paket.
+              Javite nam se i dogovorite svoj termin.
             </p>
           </div>
           <div className="cta-contact-card">
@@ -189,7 +203,7 @@ export default function DetailingPage() {
               <strong>info@hangar17.hr</strong>
             </a>
             <a className="cta-contact-item" href="/kontakt">
-              <span className="cta-contact-label">Kontakt forma</span>
+              <span className="cta-contact-label">Kontakt obrazac</span>
               <strong>Pošaljite upit →</strong>
             </a>
           </div>
