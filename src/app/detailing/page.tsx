@@ -50,6 +50,7 @@ const packages = [
     items: [
       'Premium detailing',
       'Pranje motornog prostora',
+      'Jednoslojno poliranje vozila',
     ],
     priceSmall: '260,00€',
     priceLarge: '320,00€',
