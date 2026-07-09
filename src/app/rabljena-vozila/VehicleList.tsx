@@ -10,9 +10,6 @@ export default function VehicleList({ vehicles }: { vehicles: Vehicle[] }) {
   const [filterFuel,   setFilterFuel]   = useState('')
   const [filterSort,   setFilterSort]   = useState('')
   const [activeStatus, setActiveStatus] = useState('all')
-  const [modalCar,     setModalCar]     = useState<string | null>(null)
-  const [modalDone,    setModalDone]    = useState(false)
-  const [formLoading,  setFormLoading]  = useState(false)
 
   const brands = [...new Set(vehicles.map((v) => v.brand))].sort()
 
@@ -32,14 +29,6 @@ export default function VehicleList({ vehicles }: { vehicles: Vehicle[] }) {
 
   const hasDostupno = filtered.some((v) => v.status === 'dostupno')
   const hasProdano  = filtered.some((v) => v.status === 'prodano')
-
-  function openModal(name: string) { setModalCar(name); setModalDone(false) }
-  function closeModal() { setModalCar(null) }
-  function submitModal(e: React.FormEvent) {
-    e.preventDefault()
-    setFormLoading(true)
-    setTimeout(() => { setFormLoading(false); setModalDone(true); setTimeout(() => closeModal(), 2500) }, 800)
-  }
 
   return (
     <>
@@ -96,7 +85,7 @@ export default function VehicleList({ vehicles }: { vehicles: Vehicle[] }) {
             </div>
           )}
           {filtered.filter((v) => v.status === 'dostupno').map((v) => (
-            <VehicleCard key={v.id} vehicle={v} onInquiry={openModal} />
+            <VehicleCard key={v.id} vehicle={v} />
           ))}
 
           {hasProdano && (
@@ -106,7 +95,7 @@ export default function VehicleList({ vehicles }: { vehicles: Vehicle[] }) {
             </div>
           )}
           {filtered.filter((v) => v.status === 'prodano').map((v) => (
-            <VehicleCard key={v.id} vehicle={v} onInquiry={openModal} />
+            <VehicleCard key={v.id} vehicle={v} />
           ))}
 
           {filtered.length === 0 && (
@@ -116,39 +105,11 @@ export default function VehicleList({ vehicles }: { vehicles: Vehicle[] }) {
           )}
         </div>
       </section>
-
-      {/* MODAL */}
-      <div className={`modal-overlay${modalCar ? ' open' : ''}`} onClick={(e) => { if (e.target === e.currentTarget) closeModal() }}>
-        <div className="modal-box">
-          <button className="modal-close" onClick={closeModal}>✕</button>
-          <div className="modal-title">Upit za: {modalCar}</div>
-          <form onSubmit={submitModal}>
-            <div className="modal-form-row">
-              <div className="modal-group">
-                <label className="modal-label">Ime</label>
-                <input className="modal-input" type="text" placeholder="Vaše ime" required />
-              </div>
-              <div className="modal-group">
-                <label className="modal-label">Telefon</label>
-                <input className="modal-input" type="tel" placeholder="+385 91 ..." />
-              </div>
-            </div>
-            <div className="modal-group">
-              <label className="modal-label">Poruka</label>
-              <textarea className="modal-textarea" rows={3} placeholder="Pitanje o vozilu..." />
-            </div>
-            {modalDone
-              ? <div className="modal-success show">Poruka poslana ✓</div>
-              : <button type="submit" className="modal-submit" disabled={formLoading}>{formLoading ? 'Slanje...' : 'Pošalji upit'}</button>
-            }
-          </form>
-        </div>
-      </div>
     </>
   )
 }
 
-function VehicleCard({ vehicle: v, onInquiry }: { vehicle: Vehicle; onInquiry: (name: string) => void }) {
+function VehicleCard({ vehicle: v }: { vehicle: Vehicle }) {
   const coverImg = v.images[0]
   return (
     <Link href={`/rabljena-vozila/${v.slug}`} className={`vehicle-card${v.status === 'prodano' ? ' sold' : ''}`} style={{ display: 'block', textDecoration: 'none' }}>
@@ -171,7 +132,7 @@ function VehicleCard({ vehicle: v, onInquiry }: { vehicle: Vehicle; onInquiry: (
         </div>
         <div className="card-footer">
           <div className={`card-price${v.status === 'prodano' ? ' sold-price' : ''}`}>{v.priceDisplay}</div>
-          <span className="card-cta" onClick={(e) => { if (v.status === 'dostupno') { e.preventDefault(); onInquiry(`${v.title} ${v.year}`) } }}>
+          <span className="card-cta">
             {v.status === 'dostupno' ? 'Detalji' : 'Prodano'}
           </span>
         </div>
