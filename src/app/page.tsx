@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { ALL_VEHICLES } from '@/lib/vehicles'
+import { getVehicles } from '@/lib/getVehicles'
 
 export const dynamic = 'force-dynamic'
 
@@ -39,7 +39,10 @@ const tickerItems = [
   'Zaštita vozila', 'Fotografiranje vozila', 'Uvoz po narudžbi',
 ]
 
-export default function HomePage() {
+export default async function HomePage() {
+  const vehicles = await getVehicles()
+  const featuredVehicles = vehicles.filter((v) => v.status === 'dostupno').slice(0, 4)
+
   return (
     <>
       <Header />
@@ -113,7 +116,7 @@ export default function HomePage() {
           <p className="sec-subtitle">Provjereni automobili. Brza realizacija.</p>
           <div className="sec-divider" />
           <div className="cars-gallery">
-            {ALL_VEHICLES.slice(0, 4).map((car) => (
+            {featuredVehicles.map((car) => (
               <Link key={car.id} href={`/rabljena-vozila/${car.slug}`} className="car-item">
                 {car.images[0]?.url
                   ? <Image src={car.images[0].url} alt={car.images[0].alt} width={600} height={400} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
