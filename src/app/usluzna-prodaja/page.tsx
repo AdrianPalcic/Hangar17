@@ -118,7 +118,7 @@ export default function UsluznaPage() {
                 ],
               },
               {
-                name: 'Prodajni paket', tag: 'Najpopularniji paket', price: '450€', featured: true,
+                name: 'Prodajni paket', tag: 'Najpopularniji paket', price: 'od 450€', featured: true,
                 items: [
                   'Sve iz Osnovnog paketa',
                   'Postavljanje oglasa u trajanju od 3 mjeseca',
@@ -129,7 +129,7 @@ export default function UsluznaPage() {
                 ],
               },
               {
-                name: 'All-in paket', tag: 'Potpuna usluga', price: '750€',
+                name: 'All-in paket', tag: 'Potpuna usluga', price: 'od 750€',
                 items: [
                   'Sve iz Prodajnog paketa',
                   'Postavljanje oglasa u trajanju od 6 mjeseci',
