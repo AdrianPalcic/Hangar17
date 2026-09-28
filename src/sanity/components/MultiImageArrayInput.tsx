@@ -52,7 +52,7 @@ export function MultiImageArrayInput(props: ImageArrayInputProps) {
 
   return (
     <div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+      <div style={{ marginBottom: 12 }}>
         <button
           type="button"
           disabled={uploading}
@@ -69,9 +69,6 @@ export function MultiImageArrayInput(props: ImageArrayInputProps) {
         >
           {uploading ? 'Učitavanje…' : 'Odaberi više fotografija'}
         </button>
-        <span style={{ fontSize: 13, color: '#666' }}>
-          U prozoru za odabir možete označiti više datoteka.
-        </span>
       </div>
       <input
         ref={fileInput}
