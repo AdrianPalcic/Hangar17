@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity'
+import { MultiImageArrayInput } from '../components/MultiImageArrayInput'
 
 export const vehicleType = defineType({
   name: 'vehicle',
@@ -160,7 +161,7 @@ export const vehicleType = defineType({
     defineField({
       name: 'images', title: 'Fotografije',
       type: 'array', group: 'galerija',
-      description: 'Povucite više fotografija odjednom u ovo polje. Prva fotografija u nizu koristi se kao naslovna; promijenite redoslijed povlačenjem.',
+      description: 'Odaberite više fotografija odjednom ili ih povucite u ovo polje. Prva fotografija u nizu koristi se kao naslovna; promijenite redoslijed povlačenjem.',
       of: [
         defineField({
           name: 'image',
@@ -176,6 +177,7 @@ export const vehicleType = defineType({
         }),
       ],
       options: { layout: 'grid' },
+      components: { input: MultiImageArrayInput },
     }),
   ],
 
