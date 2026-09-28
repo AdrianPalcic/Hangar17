@@ -160,6 +160,7 @@ export const vehicleType = defineType({
     defineField({
       name: 'images', title: 'Fotografije',
       type: 'array', group: 'galerija',
+      description: 'Povucite više fotografija odjednom u ovo polje. Prva fotografija u nizu koristi se kao naslovna; promijenite redoslijed povlačenjem.',
       of: [
         defineField({
           name: 'image',
