@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span className="footer-copy">© 2025 Hangar 17 d.o.o.</span>
+          <span className="footer-copy">© 2025 RIKVERC d.o.o.</span>
         </div>
       </div>
     </footer>

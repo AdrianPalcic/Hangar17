@@ -900,7 +900,10 @@ footer { background: var(--black); padding: 60px 40px 32px; }
 
   .hero-inner { padding: 48px 24px; }
   .hero-sub { margin-bottom: 36px; }
-  .hero-ctas { flex-direction: column; gap: 12px; }
+  .hero-ctas { flex-direction: column; gap: 12px; width: 100%; max-width: 360px; }
+  .hero-ctas .hero-cta,
+  .hero-ctas .hero-cta-outline { box-sizing: border-box; width: 100%; text-align: center; }
+  .hero-ctas .hero-cta { align-self: stretch; }
   .services-split,
   .services-split--3 { grid-template-columns: 1fr; }
   .svc-panel { padding: 60px 32px; min-height: auto; }
